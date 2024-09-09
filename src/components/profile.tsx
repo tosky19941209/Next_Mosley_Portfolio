@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-
+import axios from "axios"
+import { useRouter } from "next/navigation"
 const Name = () => {
     const [name, setName] = useState<string>("GREG MOSLEY")
     return (
@@ -23,10 +24,23 @@ const Name = () => {
 
 const OfficeAddress = () => {
     const [address, setAddress] = useState<string>("Florida USA ")
+    const router = useRouter()
+    const handleLocation = () => {
+        // router.push("https://www.google.com/maps/search/?api=1&query=Florida%20USA")    
+        // router.push("http://localhost:3000/trade")
+        window.open("https://www.google.com/maps/search/?api=1&query=Florida%20USA", '_blank')
+    }
     return (
         <div className="mt-10">
             <p className="text-[25px] text-[black]">Office Address:</p>
-            <p className="text-[25px] text-[#1e4cce]">{address}</p>
+            <button
+                className="text-[25px] text-[#1e4cce] "
+                onClick={() => {
+                    handleLocation()
+                }}
+            >
+                {address}
+            </button>
         </div>
     )
 }
