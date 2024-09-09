@@ -1,10 +1,6 @@
 "use client"
-
-import { useState } from "react"
-import axios from "axios"
-import { useRouter } from "next/navigation"
 const Name = () => {
-    const [name, setName] = useState<string>("GREG MOSLEY")
+    const name = "GREG MOSLEY"
     return (
         <div>
             <p className="text-[20px] font-bold text-[black]">
@@ -23,8 +19,7 @@ const Name = () => {
 }
 
 const OfficeAddress = () => {
-    const [address, setAddress] = useState<string>("Florida USA ")
-    const router = useRouter()
+    const address = "Florida USA "
     const handleLocation = () => {
         // router.push("https://www.google.com/maps/search/?api=1&query=Florida%20USA")    
         // router.push("http://localhost:3000/trade")

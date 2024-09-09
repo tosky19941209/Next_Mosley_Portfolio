@@ -1,9 +1,8 @@
 "use client"
 import Image from "next/image"
-import { useState } from "react"
 
 const Avatar = () => {
-    const [mobileNumber, setMobileNumber] = useState<string>("(727) 939-5695")
+    const mobileNumber = "(727) 939-5695"
 
     return (
         <div className="w-[200px]">
