@@ -1,7 +1,9 @@
 "use client"
 import Image from "next/image"
-
-const Avatar = () => {
+interface AvatarInterface {
+    handleOpen: (item: any) => void
+}
+const Avatar = ({ handleOpen }: AvatarInterface) => {
     const mobileNumber = "(727) 939-5695"
 
     return (
@@ -12,7 +14,10 @@ const Avatar = () => {
                 width={200}
                 height={200}
             />
-            <button className="w-[100%] h-[40px] bg-[#1e4cce] mt-5 rounded-md text-[white]">
+            <button
+                className="w-[100%] h-[40px] bg-[#1e4cce] mt-5 rounded-md text-[white]"
+                onClick={() => handleOpen("blue")}
+            >
                 Contact Us
             </button>
 
@@ -27,6 +32,5 @@ const Avatar = () => {
         </div>
     )
 }
-
 
 export default Avatar
